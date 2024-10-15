@@ -1,0 +1,39 @@
+---------------------------------------------------------
+Explicación del Código: Prueba de Laboratorio con PyQt
+---------------------------------------------------------
+
+Este documento explica el funcionamiento del código Python que implementa una aplicación de prueba de laboratorio con una interfaz gráfica de usuario (GUI) utilizando PyQt5. La aplicación permite a un usuario realizar una prueba de laboratorio, ingresar datos relevantes y guardar los resultados en archivos de texto y gráficos.
+
+El código se divide en las siguientes secciones:
+
+1. Importación de módulos:
+   - Se importan los módulos necesarios, como sys, time, datetime, os, matplotlib.pyplot y los módulos personalizados DAQ_multimetros y motor_paso.
+   - También se importa la clase QApplication y las clases relacionadas de PyQt5 para crear la GUI.
+
+2. Definición de la clase TestApp:
+   - Se define una clase llamada TestApp que hereda de QMainWindow, que es la ventana principal de la aplicación.
+
+3. Configuración de la interfaz de usuario:
+   - Se configura la ventana principal de la aplicación con un título y tamaño.
+   - Se crea un widget central y se establece como widget central de la ventana.
+   - Se crea un diseño vertical (QVBoxLayout) para organizar los elementos de la interfaz de usuario.
+
+4. Elementos de la interfaz de usuario:
+   - Se crean etiquetas (QLabel) y campos de entrada (QLineEdit) para el nombre de la prueba, el nombre del experimentador, la fecha y hora de la prueba, el número de lecturas, el intervalo y el valor de paso de motor.
+   - Se crea un botón (QPushButton) llamado "Correr Prueba" que permite al usuario ejecutar la prueba.
+
+5. Método run_test:
+   - Se define un método llamado run_test que se ejecuta cuando se hace clic en el botón "Correr Prueba".
+   - Se obtienen los datos ingresados por el usuario, como el nombre de la prueba, el nombre del experimentador, el número de lecturas, el intervalo y el valor de paso de motor.
+   - Se verifica que los campos obligatorios estén completos.
+   - Se obtiene automáticamente la fecha y hora actual del sistema.
+   - Se crea una carpeta con el nombre de la prueba y la fecha actual para almacenar los archivos de resultados.
+   - Se ejecuta el script de la prueba, registrando los datos en un archivo de texto dentro de la carpeta.
+   - Se genera una gráfica con los datos y se guarda en la misma carpeta.
+
+6. Inicialización de la aplicación:
+   - Se crea una instancia de la clase QApplication para iniciar la aplicación PyQt.
+   - Se crea una instancia de la clase TestApp y se muestra la ventana principal.
+   - La aplicación entra en un bucle de eventos hasta que se cierra la ventana.
+
+Este código proporciona una interfaz de usuario intuitiva para realizar pruebas de laboratorio, capturar datos y guardar resultados de manera organizada en una carpeta específica. Los datos de la prueba, la fecha y la hora se registran automáticamente, lo que facilita la documentación y el análisis de los resultados de las pruebas de laboratorio.
